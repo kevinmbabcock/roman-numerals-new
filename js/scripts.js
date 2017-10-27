@@ -8,12 +8,17 @@ var romanNumeral = function (userNumber) {
   // (userNumber % 1000)/100 = how many hundreds
   // (userNumber % 100)/10 = how many tens
   // (userNumber % 10) = how many singles
-
-  return thousands[Math.floor(userNumber/1000)] +
-         hundreds[Math.floor((userNumber % 1000)/100)] +
-         tens[Math.floor((userNumber % 100)/10)] +
-         singles[Math.floor(userNumber % 10)];
-}
+  if (userNumber>=4000) {
+    alert("It is not possible to convert the number greater or eaqual than 4000");
+  } else if (userNumber<=0) {
+    alert("Please type the number that is greater than 0")
+  } else {
+    return thousands[Math.floor(userNumber/1000)] +
+           hundreds[Math.floor((userNumber % 1000)/100)] +
+           tens[Math.floor((userNumber % 100)/10)] +
+           singles[Math.floor(userNumber % 10)];
+  };
+};
 
 
 $(document).ready(function() {
